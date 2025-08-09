@@ -1,0 +1,259 @@
+:root {
+  --primary: #3a4b42;
+  --accent: #e1f2e3;
+  --text-dark: #2e2e2e;
+  --header-gradient: linear-gradient(to bottom, #2c2c2c, #1f1f1f)
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-image: url('/assets/floorplan-background.png');
+  background-repeat: repeat;
+  background-size: 600px;
+  color: #1c1c1c;
+  line-height: 1.6;
+}
+
+header {
+  padding: .25rem .25rem;
+  z-index: 1000;
+  text-align: center;
+  background: linear-gradient(to bottom, #2c2c2c, #1f1f1f);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  position: sticky;
+  top: 0;
+}
+
+header img {
+  width: 360px;
+  height: auto;
+  display: block;
+  margin: 0 auto 0.45rem;
+}
+
+header p {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #e1f2e3;
+  margin: 0 auto;
+  text-align: center;
+}
+
+nav {
+  background-color: #3b5f41;
+  text-align: center;
+  position: fixed; /* stays in one place */
+  left: 0;
+  width: 100%;      /* span across the screen */
+  z-index: 1001;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(to bottom, #3b5f41, #324c37);
+  padding: .25rem 0;
+  
+}
+
+nav a {
+  margin: 0 .75rem;
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #a7dfb9;
+}
+
+section {
+  padding: 0rem .5rem;
+  max-width: 950px;
+  margin: 160px auto 1.5rem;
+  background: rgba(220, 220, 215, .65);
+  border-radius: 12px;
+}
+
+h2 {
+  color: var(--primary);
+  font-size: 4rem;
+  margin-bottom: .5rem;
+}
+
+.how-helps {
+  max-width: 1100px;
+  margin: auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.how-helps h2 {
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #1c1c1c;
+}
+
+/* Grid layout */
+.help-grid {
+  display: grid;
+  grid-template-columns: repeat(2,2fr);
+  gap: 2rem;
+}
+
+/* Individual item */
+.help-item {
+  background: rgba(220, 220, 215, .35);
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  text-align: left; /* keep body text left-aligned */
+}
+
+/* Icon floated top-left with text wrap */
+.help-item img {
+  width: 50px;
+  height: 50px;
+  float: left; /* allows text to wrap around */
+  margin: 0 1rem 0.5rem 0; /* space around icon */
+}
+
+.help-item h3 {
+  text-align: center; /* center the title */
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #1c1c1c;
+}
+
+.help-item p, 
+.help-item ul {
+  font-size: 0.95rem;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.help-item ul {
+  list-style: none;
+}
+
+.help-item ul li {
+  margin-bottom: 0.4rem;
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+.help-item ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #3a4b42; /* Accent color */
+  font-weight: bold;
+}
+/* Clear float to maintain box height */
+.help-item::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.pre-footer {
+  background: none;
+  padding: 0rem 0;
+  display: flex;
+  justify-content: center; /* centers the whole row */
+}
+
+.logo-strip {
+  display: flex;
+  flex-wrap: wrap;         /* allows wrapping on smaller screens */
+  justify-content: center; /* centers items within the strip */
+  align-items: center;
+  gap: 1.25rem;                /* space between logos */
+}
+
+.logo-strip img {
+  max-height: 50px;        /* uniform height */
+  width: auto;             /* keeps proportions */
+}
+
+/* Footer styles */
+footer {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.footer-top {
+  /* translucent black so blur shows through */
+  background: linear-gradient(to bottom, #2c2c2c, #1f1f1f, .35) /*test gradient blur*/
+  -webkit-backdrop-filter: blur(10px);
+  color: #f2f2f2;                 /* lighter text for contrast */
+  padding: .85rem 1rem;           /* shorter height */
+  border: 1px solid rgba(220,220,2015,0.25);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+
+.footer-top h2 {
+  margin: 0;                      /* keep it tight */
+  font-size: 1.25rem;             /* slightly smaller to reduce height */
+  font-weight: 700;
+  letter-spacing: .2px;
+}
+
+/* Put text and button on the same horizontal line */
+.footer-top-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;        /* center the row */
+  gap: 1rem;                      /* space between text and button */
+  flex-wrap: wrap;                /* wrap on small screens */
+}
+
+/* Button style that fits the glass look */
+.footer-cta-btn {
+  background: linear-gradient(to bottom, #ffce00, #ff9a00);
+  color: #fff;
+  padding: .6rem 1.1rem;
+  border-radius: 999px;           /* pill */
+  border: 1px solid rgba(255,255,255,0.3);
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+  line-height: 1;                 /* tighter vertical rhythm */
+}
+
+.footer-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+}
+
+.footer-bottom {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(to right, #3b5f41, #324c37);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 2rem 1rem;
+  gap: 1.5rem;
+}
+
+.footer-bottom a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.footer-bottom img {
+  width: 200px;
+  height: auto;
+  margin-bottom: 0.2rem;
+}
+
+.footer-column h4 {
+  margin-bottom: 0.5rem;
+}
+
+.footer-bottom-bar {
+  background: #2c2c2c;
+  color: #ccc;
+  text-align: center;
+  padding: 0.5rem;
+}
