@@ -1,8 +1,5 @@
-{% extends 'layout.njk' %}
-
-{# This sets the title for the browser tab on this page #}
-{% set pageTitle = "Client Portal | AppraSure" %}
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -71,23 +68,25 @@
         <a href__="/portal">Client Portal</a>
     </nav>
 
-    <!-- === INTEGRATED ONBOARDING PORTAL SECTION === -->
-    <section class="portal-section">
-        <h2>Client Onboarding Portal</h2>
-        <p>
-            Welcome to the AppraSure client portal. Please complete the secure form below to begin the
-            onboarding process for your claim.
-        </p>
-        <div class="portal-iframe-container">
-            <iframe
-                class="portal-iframe"
-                src="https://portal.apprasure.com/Onboarding"
-                title="AppraSure Client Onboarding Portal"
-                frameborder="0">
-            </iframe>
-        </div>
-    </section>
-    <!-- === END OF SECTION === -->
+    <main>
+        <!-- === INTEGRATED ONBOARDING PORTAL SECTION === -->
+        <section class="portal-section">
+            <h2>Client Onboarding Portal</h2>
+            <p>
+                Welcome to the AppraSure client portal. Please complete the secure form below to begin the
+                onboarding process for your claim.
+            </p>
+            <div class="portal-iframe-container">
+                <iframe
+                    class="portal-iframe"
+                    src="https://portal.apprasure.com/Onboarding"
+                    title="AppraSure Client Onboarding Portal"
+                    frameborder="0">
+                </iframe>
+            </div>
+        </section>
+        <!-- === END OF SECTION === -->
+    </main>
 
     <footer>
         <div class="footer-top">
@@ -118,5 +117,4 @@
         </div>
     </footer>
 </body>
-
-{% endblock %}
+</html>
