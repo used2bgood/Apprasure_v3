@@ -1,0 +1,12 @@
+{
+  "name": "apprasure-eleventy",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "eleventy --serve --input=src",
+    "build": "eleventy --input=src"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  }
+}
