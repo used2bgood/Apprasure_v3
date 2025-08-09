@@ -1,32 +1,33 @@
----
-layout: layout.njk
-title: Contact | AppraSure
-permalink: "/portal/"
----
+{% extends 'base.njk' %}
 
-{# This sets the title for this specific page #}
+{# This sets the title for the browser tab on this page #}
 {% set pageTitle = "Client Portal | AppraSure" %}
 
 {% block content %}
 
-    <!-- === SECURE PORTAL LINK SECTION === -->
+    <!-- === INTEGRATED ONBOARDING PORTAL SECTION === -->
     <section class="portal-section">
-        <h2>Let Us Know How We Can Help!</h2>
+        <h2>Client Onboarding Portal</h2>
         <p>
-            Our streamlined portal makes the process simple and efficient.
-            Click the button below to get started.
+            Welcome to the AppraSure client portal. Please complete the secure form below to begin the
+            onboarding process for your claim.
         </p>
-        <a href__="https://portal.apprasure.com/Onboarding" class="portal-link-btn" target="_blank" rel="noopener noreferrer">
-            🚀 Open Secure Portal
-        </a>
+        <div class="portal-iframe-container">
+            <iframe
+                class="portal-iframe"
+                src="https://portal.apprasure.com/Onboarding"
+                title="AppraSure Client Onboarding Portal"
+                frameborder="0">
+            </iframe>
+        </div>
     </section>
     <!-- === END OF SECTION === -->
 
     <style>
-        /* Styles for the new portal link section */
+        /* Styles for the integrated portal section */
         .portal-section {
-            padding: 4rem 1rem;
-            max-width: 900px;
+            padding: 2rem 1rem;
+            max-width: 1100px;
             margin: 2rem auto;
             background: rgba(250, 250, 245, .85);
             border-radius: 12px;
@@ -35,7 +36,7 @@ permalink: "/portal/"
         }
         .portal-section h2 {
             font-size: 2.8rem;
-            color: var(--primary-color); /* Assuming this is defined in your main CSS */
+            color: var(--primary-color); /* Uses variable from your main CSS */
             margin-bottom: 1rem;
         }
         .portal-section p {
@@ -47,31 +48,26 @@ permalink: "/portal/"
             margin-right: auto;
             line-height: 1.6;
         }
-        .portal-link-btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #3a4b42, #4a5d52);
-            color: white;
-            padding: 18px 36px;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 20px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(58, 75, 66, 0.3);
-            margin-top: 1rem;
-            border: 2px solid transparent;
+        .portal-iframe-container {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+            border: 1px solid rgba(0,0,0,0.08);
+            min-height: 900px; /* Provides a container height */
         }
-        .portal-link-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(58, 75, 66, 0.4);
-            color: white;
+        .portal-iframe {
+            width: 100%;
+            height: 900px; /* A good default height */
+            border: none;
+            display: block;
         }
         @media (max-width: 768px) {
             .portal-section {
-                padding: 2rem 1rem;
+                padding: 1rem 0.5rem;
             }
-            .portal-section h2 {
-                font-size: 2.2rem;
+            .portal-iframe {
+                height: 1200px; /* Taller on mobile where elements stack */
             }
         }
     </style>
