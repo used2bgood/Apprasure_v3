@@ -1,18 +1,20 @@
-# AppraSure Eleventy Site
+# Base44 App
 
-## Develop
+
+This app was created automatically by Base44.
+It's a Vite+React app that communicates with the Base44 API.
+
+## Running the app
+
 ```bash
 npm install
 npm run dev
 ```
 
-## Build
+## Building the app
+
 ```bash
 npm run build
 ```
 
-### Notes
-- Put your `apprasure-transparent.png` in `src/assets/` (or update the path in `header.njk`).
-- Primary stylesheet is `src/assets/styles.css`. Replace it with your own `style.css` contents if you have one.
-- Permalinks match your nav: `/`, `/why/`, `/services/`, `/testimonials/`, `/portal/`.
-# Apprasure_v3
+For more information and support, please contact Base44 support at app@base44.com.
