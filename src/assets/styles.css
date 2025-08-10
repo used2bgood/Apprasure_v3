@@ -205,3 +205,43 @@ footer{margin-top:1.5rem;font-size:.95rem}
 .steps .step p {
   margin: 0; /* tightens up heading and text spacing */
 }
+
+/* === Fix step cards: widen columns and use true wrap around icons === */
+.steps {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* was 220px */
+}
+
+/* Reset from flex to block so float wrapping works */
+.steps .step {
+  display: block;
+  padding: 1.25rem 1rem;
+}
+
+/* Float the icon so heading + paragraph wrap beside it */
+.steps .step .icon {
+  float: left;
+  font-size: 1.8rem;
+  line-height: 1;
+  margin: .15rem .75rem .25rem 0; /* right gap from text */
+}
+
+/* Clear the float at the end of each card */
+.steps .step::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* Tighter, balanced typography inside cards */
+.steps .step h3 {
+  font-size: clamp(1.1rem, 2.1vw, 1.3rem); /* a notch smaller */
+  line-height: 1.25;
+  margin: 0 0 .25rem;
+}
+.steps .step p {
+  margin: 0;
+  line-height: 1.5;
+  /* optional: keep paragraphs from getting super narrow on tall screens */
+  max-width: 52ch;
+}
+
