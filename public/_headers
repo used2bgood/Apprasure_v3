@@ -1,0 +1,3 @@
+# Apply CSP only to the /embed route
+/embed
+  Content-Security-Policy: frame-ancestors 'self' https://apprasure.com;
