@@ -166,3 +166,42 @@ footer{margin-top:1.5rem;font-size:.95rem}
 @media (max-width: 560px) {
   .hero { padding-top: 2.5rem; }
 }
+
+/* === Tuning pass 4 — audience card text size === */
+.audience-card p {
+  font-size: 0.95rem; /* slightly smaller than default body size */
+  line-height: 1.45;
+}
+
+/* === Tuning pass 5 — center CTA text & button === */
+.cta {
+  text-align: center;
+}
+.cta p {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 640px; /* keeps text from getting too wide on large screens */
+}
+.cta .btn {
+  display: inline-flex; /* ensures button is centered with text */
+  margin-top: 1rem;
+}
+
+/* === Tuning pass 6 — wrap text around icons in "How the appraisal process works" === */
+.steps .step {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.steps .step .icon {
+  flex-shrink: 0;
+  font-size: 1.8rem;  /* slightly bigger for visibility */
+  line-height: 1;
+  margin-bottom: 0;   /* remove old vertical gap */
+}
+
+.steps .step h3,
+.steps .step p {
+  margin: 0; /* tightens up heading and text spacing */
+}
