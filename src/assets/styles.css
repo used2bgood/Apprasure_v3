@@ -50,3 +50,52 @@ footer{margin-top:1.5rem;font-size:.95rem}
 /* FAQs */
 .faqs details { border-radius: 12px; padding: .75rem 1rem; margin-bottom: .5rem; }
 .faqs summary { cursor: pointer; font-weight: 600; }
+
+/* ====== Layout helpers & section styling (added) ====== */
+.container { max-width: 1080px; margin: 0 auto; }
+.hero { padding: 6rem 1.25rem 4rem; text-align: center; }
+.hero-inner { max-width: 960px; margin: 0 auto; }
+.hero .btn + .btn { margin-left: .5rem; }
+
+/* Cards & soft panels */
+.card, .step, .audience-card, .faqs details, .feature { 
+  background: rgba(0,0,0,.03);
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(0,0,0,.06);
+}
+
+/* Feature layout */
+.feature-grid { display: grid; gap: 1.25rem; }
+.feature { display: grid; grid-template-columns: 1.2fr 1fr; gap: 1.25rem; align-items: center; }
+.feature:nth-child(even) { grid-template-columns: 1fr 1.2fr; }
+.feature-img { width: 100%; height: 260px; object-fit: cover; border-radius: 16px; }
+
+/* Cred strip (subtle) */
+.cred-strip { padding: 1.5rem; background: rgba(0,0,0,.03); }
+.cred-items { display:flex; align-items:center; justify-content:center; }
+.cred-items img { max-height: 44px; width: auto; opacity: .9; }
+
+/* Buttons */
+.btn { display:inline-flex; align-items:center; justify-content:center; gap:.4rem; padding:.6rem 1rem; border-radius:999px; text-decoration:none; font-weight:600; border:1px solid transparent; }
+.btn-primary { background:#2c2c2c; color:#fff; }
+.btn-primary:hover { filter:brightness(1.1); }
+.btn-secondary { background:#e1f2e3; color:#1c1c1c; border-color:rgba(0,0,0,.06); }
+.btn-secondary:hover { filter:brightness(.98); }
+.btn-link { color:#1c1c1c; text-decoration: underline; text-underline-offset: 3px; }
+
+/* Steps grid & icons */
+.steps { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:1rem; }
+.step { padding:1rem; }
+.step .icon { font-size: 1.4rem; margin-bottom: .4rem; }
+
+/* Audience grid */
+.audience-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:1rem; }
+.audience-card { padding:1.25rem; }
+
+/* Section spacing */
+.section { padding: 3rem 1.25rem; }
+.section-intro { max-width: 800px; margin: .5rem auto 2rem; text-align: center; }
+
+/* FAQs */
+.faqs details { padding:.75rem 1rem; margin-bottom:.5rem; }
+.faqs summary { cursor:pointer; font-weight:600; }
