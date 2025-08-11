@@ -290,3 +290,74 @@ footer {
 @media (max-width: 560px) {
   :root { --header-height: 120px; }
 }
+
+/* Remove background/shadow from specific feature */
+.feature--flat {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+/* Stack with overlays */
+.evidence-stack {
+  position: relative;
+  flex: 1;
+}
+
+.evidence-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: transparent;
+  border-radius: 12px;
+}
+
+/* Note card overlay */
+.note-card {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(255,255,255,0.94);
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  max-width: 75%;
+}
+
+.note-card table {
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.note-card th, .note-card td {
+  padding: 0.3rem 0.4rem;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.note-card tr:last-child td {
+  border-bottom: none;
+}
+
+/* Material spec label */
+.material-spec {
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+  background: rgba(33,45,40,0.9);
+  color: #fff;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+/* Text section */
+.feature-copy {
+  flex: 1;
+}
+
