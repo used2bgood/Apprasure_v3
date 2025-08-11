@@ -54,7 +54,6 @@ header p{
 /* Fixed nav sits under the header */
 nav{
   position:fixed;
-  top:var(--header-height);
   left:0;
   width:100%;
   z-index:1001;
