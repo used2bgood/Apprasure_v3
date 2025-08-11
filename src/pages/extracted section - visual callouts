@@ -1,0 +1,27 @@
+<!-- VISUAL CALLOUTS -->
+<section id="features" class="section features">
+  <div class="container feature-grid">
+
+    <!-- Evidence Stack (with localized backdrop) -->
+    <div class="feature feature--flat">
+      <div class="evidence-backdrop">
+        <div class="evidence-stack">
+          <img class="evidence-photo" src="/assets/xact-comparison.png"
+               alt="Field photo with overlaid evidence card">
+      </div>
+ <div class="feature-copy">
+        <h3>Evidence-Based Scopes</h3>
+        <p>We pair on-site observations with documentation, photos, and material specs to support every line item.</p>
+      </div>
+    </div>
+
+  <div class="feature feature--image-right feature--bleed">
+  <div class="feature-copy">
+    <h3>Estimate Clarity</h3>
+    <p>Our estimating approach is grounded in restorative construction and current pricing—no fluff, no padding.</p>
+  </div>
+
+  <figure class="feature-media">
+    <img class="feature-img" src="/assets/claim_paperwork_and_estimate.png" alt="Estimate document and pencil on desk">
+  </figure>
+</div>
