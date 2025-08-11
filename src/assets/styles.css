@@ -29,12 +29,12 @@ body{
    Header + Top Nav
    ----------------- */
 header{
+   position:fixed;
   padding:.2rem .25rem;
   z-index:1000;
   text-align:center;
   background:var(--header-gradient);
   box-shadow:0 4px 10px rgba(0,0,0,.4);
-  position:sticky;
   top:0;
 }
 header img{
