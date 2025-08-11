@@ -293,3 +293,19 @@ footer { margin-top: 1.5rem; font-size: .95rem; }
   .note-card table { font-size: .9rem; }
   .material-spec { left: 16px; bottom: 16px; }
 }
+
+
+/* Flat feature: no card backdrop */
+.feature--flat {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+
+/* Keep the photo’s own shadow/rounding */
+.feature--flat .feature-img {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.18);
+  height: auto; /* let the image drive height */
+}
