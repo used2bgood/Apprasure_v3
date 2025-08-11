@@ -29,7 +29,7 @@ body{
    Header + Top Nav
    ----------------- */
 header{
-   position:fixed;
+   position:sticky;
   padding:.2rem .25rem;
   z-index:1000;
   text-align:center;
@@ -53,7 +53,7 @@ header p{
 
 /* Fixed nav sits under the header */
 nav{
-  position:fixed;
+  position:sticky;
   left:0;
   width:100%;
   z-index:1001;
