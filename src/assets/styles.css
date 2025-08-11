@@ -321,3 +321,51 @@ footer{margin-top:1.5rem;font-size:.95rem}
   }
 }
 
+/* ---------- Evidence (image + copy) ---------- */
+#evidence .evidence{ display:grid; gap:2rem; align-items:start; }
+#evidence .evidence-media picture,
+#evidence .evidence-media img{
+  display:block; max-width:640px; width:100%; height:auto;
+  border-radius:var(--radius); box-shadow: var(--shadow-md); margin-inline:auto;
+}
+.surface{
+  background:#fff; border:1px solid var(--border);
+  border-radius:var(--radius); box-shadow: var(--shadow-sm);
+  padding: var(--space-5);
+}
+.eyebrow{
+  display:inline-block; font-size:.78rem; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--primary); background:var(--accent);
+  padding:.25rem .5rem; border-radius:999px; margin-bottom:.5rem;
+}
+.list-check{ list-style:none; margin:0; padding:0; display:grid; gap:.6rem; }
+.list-check li{ position:relative; padding-left:1.7rem; color:var(--text); }
+.list-check li::before{
+  content:""; position:absolute; left:0; top:.2rem; width:1rem; height:1rem; border-radius:999px;
+  background:var(--accent); box-shadow: inset 0 0 0 2px rgba(35,68,58,.15);
+}
+.list-check li::after{
+  content:""; position:absolute; left:.26rem; top:.46rem; width:.5rem; height:.28rem;
+  border-left:2px solid var(--primary); border-bottom:2px solid var(--primary); transform:rotate(-45deg);
+}
+@media (min-width: 960px){
+  #evidence .evidence{ grid-template-columns: 1.05fr 1fr; gap:2.25rem; }
+  #evidence .evidence-copy{ align-self:center; }
+}
+
+/* ---------- Estimate Clarity ---------- */
+#estimate-clarity .media-block{ margin: var(--space-5) 0; }
+#estimate-clarity .media-block picture,
+#estimate-clarity .media-block img{
+  display:block; max-width:640px; width:100%; height:auto;
+  border-radius:var(--radius); box-shadow: var(--shadow-md); margin-inline:auto;
+}
+#estimate-clarity .bullets{
+  list-style:none; margin: var(--space-4) 0 0; padding:0; display:grid; gap:.6rem; color:var(--text);
+}
+#estimate-clarity .bullets li{ position:relative; padding-left:1.2rem; }
+#estimate-clarity .bullets li::before{
+  content:"\2022";
+  position:absolute; left:0; top:0;
+  color:var(--primary); font-weight:700;
+}
