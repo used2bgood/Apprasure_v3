@@ -66,7 +66,7 @@ footer{margin-top:1.5rem;font-size:.95rem}
 
 /* Feature layout */
 .feature-grid { display: grid; gap: 1.25rem; }
-.feature { display: grid; grid-template-columns: 1.2fr 1fr; gap: 1.25rem; align-items: center; }
+.feature { display: grid; grid-template-columns: 1.2fr 1fr; gap: 1.25rem; align-items: center; overflow: visible;}
 .feature:nth-child(even) { grid-template-columns: 1fr 1.2fr; }
 .feature-img {
   height: auto;
