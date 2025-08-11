@@ -1,383 +1,278 @@
-:root{--primary:#3a4b42;--accent:#e1f2e3;--text-dark:#2e2e2e;--header-gradient:linear-gradient(to bottom,#2c2c2c,#1f1f1f)}
-body{margin:0;font-family:'Segoe UI',sans-serif;background-image:url('/assets/floorplan-background.png');background-repeat:repeat;background-size:600px;color:#1c1c1c;line-height:1.6}
-header{padding:.25rem .25rem;z-index:1000;text-align:center;background:linear-gradient(to bottom,#2c2c2c,#1f1f1f);box-shadow:0 4px 10px rgba(0,0,0,.4);position:sticky;top:0}
-header img{width:360px;height:auto;display:block;margin:0 auto .45rem}
-header p{font-size:1.2rem;font-style:italic;color:#e1f2e3;margin:0 auto;text-align:center}
-nav{background-color:#3b5f41;text-align:center;position:fixed;left:0;width:100%;z-index:1001;box-shadow:0 4px 12px rgba(0,0,0,.2);background-image:linear-gradient(to bottom,#3b5f41,#324c37);padding:.25rem 0}
-nav a{margin:0 .75rem;text-decoration:none;color:var(--accent);font-weight:700;transition:color .3s ease}
-nav a:hover{color:#a7dfb9}
-section{padding:0 .5rem;max-width:950px;margin:160px auto 1.5rem;background:rgba(220,220,215,.65);border-radius:12px}
-h2{color:var(--primary);font-size:4rem;margin-bottom:.5rem}
-.pre-footer{background:none;padding:0;display:flex;justify-content:center}
-.logo-strip{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:1.25rem}
-.logo-strip img{max-height:50px;width:auto}
-footer{margin-top:1.5rem;font-size:.95rem}
-.footer-top{background:linear-gradient(to bottom,#2c2c2c,#1f1f1f,.35) -webkit-backdrop-filter: blur(10px);color:#f2f2f2;padding:.85rem 1rem;border:1px solid rgba(220,220,2015,.25);box-shadow:0 8px 24px rgba(0,0,0,.25)}
-.footer-top h2{margin:0;font-size:1.25rem;font-weight:700;letter-spacing:.2px}
-.footer-top-content{display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap}
-.footer-cta-btn{background:linear-gradient(to bottom,#ffce00,#ff9a00);color:#fff;padding:.6rem 1.1rem;border-radius:999px;border:1px solid rgba(255,255,255,.3);text-decoration:none;font-weight:700;transition:transform .2s ease,background .2s ease,box-shadow .2s ease;line-height:1}
-.footer-cta-btn:hover{transform:translateY(-2px);box-shadow:0 6px 14px rgba(0,0,0,.3)}
-.footer-bottom{box-shadow:0 4px 12px rgba(0,0,0,.2);background-image:linear-gradient(to right,#3b5f41,#324c37);display:flex;flex-wrap:wrap;justify-content:space-between;padding:2rem 1rem;gap:1.5rem}
-.footer-bottom a{color:inherit;text-decoration:underline}
-.footer-bottom img{width:200px;height:auto;margin-bottom:.2rem}
-.footer-column h4{margin-bottom:.5rem}
-.footer-bottom-bar{background:#2c2c2c;color:#ccc;text-align:center;padding:.5rem}
-/* Sections */
-.section { padding: 3rem 1.25rem; }
-.section-intro { max-width: 800px; margin: .5rem auto 2rem; }
+:root {
+  --primary: #3a4b42;
+  --accent: #e1f2e3;
+  --text-dark: #2e2e2e;
+  --header-gradient: linear-gradient(to bottom, #2c2c2c, #1f1f1f);
+  --header-height: 108px; /* adjust if header height changes */
+}
 
-/* Hero (uses existing palette—no colors set here if you already style .hero) */
-.hero { padding: 6rem 1.25rem 4rem; text-align: center; }
-.hero-inner { max-width: 960px; }
+/* Base */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-image: url('/assets/floorplan-background.png');
+  background-repeat: repeat;
+  background-size: 600px;
+  color: #1c1c1c;
+  line-height: 1.6;
+}
 
-/* Simple button helpers (use only if you don't already have these) */
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: .4rem; padding: .6rem 1rem; border-radius: 999px; text-decoration: none; font-weight: 600; border: 1px solid transparent; }
-.btn-link { text-decoration: underline; text-underline-offset: 3px; }
+/* Header */
+header {
+  padding: .25rem .25rem;
+  z-index: 1000;
+  text-align: center;
+  background: var(--header-gradient);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .4);
+  position: sticky;
+  top: 0;
+}
+header img {
+  width: 360px;
+  height: auto;
+  display: block;
+  margin: 0 auto .45rem;
+}
+header p {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--accent);
+  margin: 0 auto;
+  text-align: center;
+}
 
-/* Grids */
-.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
-.step { border-radius: 14px; padding: 1rem; }
-.step .icon { font-size: 1.4rem; margin-bottom: .4rem; }
+/* Nav (fixed under header) */
+nav {
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  width: 100%;
+  z-index: 1001;
+  text-align: center;
+  padding: .25rem 0;
+  background-image: linear-gradient(to bottom, #3b5f41, #324c37);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .2);
+}
+nav a {
+  margin: 0 .75rem;
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: 700;
+  transition: color .3s ease;
+}
+nav a:hover { color: #a7dfb9; }
 
-.audience-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
-.audience-card { border-radius: 14px; padding: .5rem; }
+/* Generic sections */
+section {
+  padding: 0 .5rem;
+  max-width: 950px;
+  margin: calc(var(--header-height) + 52px) auto 1.5rem; /* push below fixed nav */
+  background: rgba(220, 220, 215, .65);
+  border-radius: 12px;
+}
+h2 {
+  color: var(--primary);
+  font-size: 4rem;
+  margin-bottom: .5rem;
+}
 
-.feature-grid { display: grid; gap: 1.25rem; }
-.feature { display: grid; grid-template-columns: 1.2fr 1fr; gap: 1.25rem; align-items: center; }
-.feature:nth-child(even) { grid-template-columns: 1fr 1.2fr; }
-.feature-img { width: 100%; height: 420px; object-fit: cover; border-radius: 16px; }
-
-/* FAQs */
-.faqs details { border-radius: 12px; padding: .75rem 1rem; margin-bottom: .5rem; }
-.faqs summary { cursor: pointer; font-weight: 600; }
-
-/* ====== Layout helpers & section styling (added) ====== */
+/* Utility containers */
 .container { max-width: 1080px; margin: 0 auto; }
-.hero { padding: 6rem 1.25rem 4rem; text-align: center; }
+.section { padding: 3rem 1.25rem; }
+.section-intro { max-width: 800px; margin: .5rem auto 2rem; text-align: center; }
+
+/* Hero */
+.hero { padding: 3.25rem 1.25rem 3rem; text-align: center; }
 .hero-inner { max-width: 960px; margin: 0 auto; }
+.hero h1 {
+  font-size: clamp(2.25rem, 4.8vw, 3.5rem);
+  line-height: 1.15;
+  margin-bottom: .75rem;
+}
+.hero p { font-size: clamp(1.05rem, 2.1vw, 1.25rem); opacity: .95; }
 .hero .btn + .btn { margin-left: .5rem; }
 
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: .4rem; padding: .6rem 1rem; border-radius: 999px;
+  text-decoration: none; font-weight: 600; border: 1px solid transparent;
+}
+.btn-primary { background: #2c2c2c; color: #fff; }
+.btn-primary:hover { filter: brightness(1.1); }
+.btn-secondary { background: #e1f2e3; color: #1c1c1c; border-color: rgba(0,0,0,.06); }
+.btn-secondary:hover { filter: brightness(.98); }
+.btn-link { color: #1c1c1c; text-decoration: underline; text-underline-offset: 3px; }
+
 /* Cards & soft panels */
-.card, .step, .audience-card, .faqs details, .feature { 
-  background: rgba(0,0,0,.03);
+.card, .step, .audience-card, .faqs details, .feature {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: saturate(120%) blur(8px);
+  -webkit-backdrop-filter: saturate(120%) blur(8px);
+  border: 1px solid rgba(0,0,0,0.06);
   border-radius: 16px;
-  box-shadow: 0 6px 24px rgba(0,0,0,.06);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.10);
+  color: #1c1c1c;
 }
 
-/* Feature layout */
+/* Steps grid */
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+.step { padding: 1.25rem 1rem; }
+.step .icon {
+  float: left;
+  font-size: 1.8rem;
+  line-height: 1;
+  margin: .15rem .75rem .25rem 0;
+}
+.step h3 { font-size: clamp(1.1rem, 2.1vw, 1.3rem); line-height: 1.25; margin: 0 0 .25rem; }
+.step p { margin: 0; line-height: 1.5; max-width: 52ch; }
+.step::after { content: ""; display: block; clear: both; }
+
+/* Audience grid */
+.audience-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; align-items: stretch; }
+.audience-card { min-height: 320px; display: flex; flex-direction: column; justify-content: flex-start; padding: 1.5rem; }
+.audience-card h2 { text-align: center; margin: 0 0 1rem; font-size: 2rem; }
+.audience-card ul { padding-left: 1.2rem; margin: 0; flex-grow: 1; }
+.audience-card li { margin-bottom: .5rem; font-size: .95rem; line-height: 1.4; }
+
+/* Features */
 .feature-grid { display: grid; gap: 1.25rem; }
-/* Feature layout (single source of truth) */
-.feature-grid {
-  display: grid;
-  gap: 1.25rem;
-}
-
-/* Let content spill outside the rounded card */
 .feature {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   gap: 1.25rem;
   align-items: center;
-  overflow: visible; /* key for bleed */
+  overflow: visible; /* let images “bleed” */
 }
-.feature:nth-child(even) {
-  grid-template-columns: 1fr 1.2fr;
-}
-
-/* Base image rules */
+.feature:nth-child(even) { grid-template-columns: 1fr 1.2fr; }
 .feature-img {
   display: block;
   width: 100%;
-  height: 320px;        /* base height for most images */
+  height: 320px;
   object-fit: cover;
   border-radius: 14px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.10);
 }
-
-/* Make ONLY the second feature image taller and let it "bleed" out */
 .feature:nth-child(2) .feature-img {
-  height: 420px;        /* taller image */
-  position: relative;
-  top: -20px;           /* lift it up a bit */
-  left: -24px;          /* extend left beyond the card */
-  width: calc(100% + 48px); /* extend both sides */
-  border-radius: 16px;
-  z-index: 2;
+  height: 420px; position: relative; top: -20px; left: -24px;
+  width: calc(100% + 48px); border-radius: 16px; z-index: 2;
 }
 
-
-/* Cred strip (subtle) */
+/* Cred strip (if used) */
 .cred-strip { padding: 1.5rem; background: rgba(0,0,0,.03); }
-.cred-items { display:flex; align-items:center; justify-content:center; }
+.cred-items { display: flex; align-items: center; justify-content: center; }
 .cred-items img { max-height: 44px; width: auto; opacity: .9; }
 
-/* Buttons */
-.btn { display:inline-flex; align-items:center; justify-content:center; gap:.4rem; padding:.6rem 1rem; border-radius:999px; text-decoration:none; font-weight:600; border:1px solid transparent; }
-.btn-primary { background:#2c2c2c; color:#fff; }
-.btn-primary:hover { filter:brightness(1.1); }
-.btn-secondary { background:#e1f2e3; color:#1c1c1c; border-color:rgba(0,0,0,.06); }
-.btn-secondary:hover { filter:brightness(.98); }
-.btn-link { color:#1c1c1c; text-decoration: underline; text-underline-offset: 3px; }
+/* Pre-footer logos */
+.pre-footer { background: none; padding: 0; display: flex; justify-content: center; }
+.logo-strip { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1.25rem; }
+.logo-strip img { max-height: 50px; width: auto; }
 
-/* Steps grid & icons */
-.steps { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:1rem; }
-.step { padding:1rem; }
-.step .icon { font-size: 1.4rem; margin-bottom: .4rem; }
-
-/* Audience grid */
-.audience-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:1rem; }
-.audience-card { padding:1.25rem; }
-
-/* Section spacing */
-.section { padding: 3rem 1.25rem; }
-.section-intro { max-width: 800px; margin: .5rem auto 2rem; text-align: center; }
+/* CTA section */
+.cta { text-align: center; }
+.cta p { margin-left: auto; margin-right: auto; max-width: 640px; }
+.cta .btn { display: inline-flex; margin-top: 1rem; }
 
 /* FAQs */
-.faqs details { padding:.75rem 1rem; margin-bottom:.5rem; }
-.faqs summary { cursor:pointer; font-weight:600; }
+.faqs details { padding: .75rem 1rem; margin-bottom: .5rem; }
+.faqs summary { cursor: pointer; font-weight: 600; }
 
-/* === Tuning pass 1 — hero spacing & typography === */
-.hero {
-  /* was: padding: 6rem 1.25rem 4rem; */
-  padding: 3.25rem 1.25rem 3rem;  /* tighter top gap below sticky nav */
+/* Footer */
+footer { margin-top: 1.5rem; font-size: .95rem; }
+.footer-top {
+  background: linear-gradient(to bottom, rgba(44,44,44,0.85), rgba(31,31,31,0.85));
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  color: #f2f2f2;
+  padding: .85rem 1rem;
+  border: 1px solid rgba(220,220,215,.25);
+  box-shadow: 0 8px 24px rgba(0,0,0,.25);
+  border-radius: 14px;
 }
-.hero-inner { max-width: 960px; margin: 0 auto; }
-.hero h1 {
-  /* bigger, but still responsive */
-  font-size: clamp(2.25rem, 4.8vw, 3.5rem);
-  line-height: 1.15;
-  margin-bottom: .75rem;
-}
-.hero p {
-  font-size: clamp(1.05rem, 2.1vw, 1.25rem);
-  opacity: .95;
-}
+.footer-top h2 { margin: 0; font-size: 1.25rem; font-weight: 700; letter-spacing: .2px; }
+.footer-top-content { display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap; }
 
-/* === Tuning pass 2 — center section headers === */
-.section h2,
-#how-it-works h2,
-.faqs h2,
-.cta h2 {
-  text-align: center;
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-
-/* Optional: make subsection headings slightly larger for balance */
-.step h3,
-.feature-copy h3 {
-  font-size: clamp(1.05rem, 2.4vw, 1.35rem);
-  margin-top: 0.25rem;
-}
-
-/* === Tuning pass 3 — brighten “card” backdrops === */
-/* Switch panels from very light gray to a light, frosted surface */
-.card, .step, .audience-card, .faqs details, .feature {
-  background: rgba(255,255,255,0.85);                  /* brighter */
-  backdrop-filter: saturate(120%) blur(8px);           /* subtle glass */
-  -webkit-backdrop-filter: saturate(120%) blur(8px);
-  border: 1px solid rgba(0,0,0,0.06);
-  border-radius: 16px;
-  box-shadow: 0 8px 28px rgba(0,0,0,0.10);
-  color: #1c1c1c;                                      /* ensure contrast on bright bg */
-}
-
-
-/* Grid spacing stays as-is, but add a touch more air on large screens */
-@media (min-width: 900px) {
-  .steps,
-  .audience-grid,
-  .feature-grid { gap: 1.35rem; }
-}
-
-/* If your nav/header is extra tall on some breakpoints, trim hero further on phones */
-@media (max-width: 560px) {
-  .hero { padding-top: 2.5rem; }
-}
-
-/* === Tuning pass 4 — audience card text size === */
-.audience-card p {
-  font-size: 0.95rem; /* slightly smaller than default body size */
-  line-height: 1.45;
-}
-
-/* === Tuning pass 5 — center CTA text & button === */
-.cta {
-  text-align: center;
-}
-.cta p {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 640px; /* keeps text from getting too wide on large screens */
-}
-.cta .btn {
-  display: inline-flex; /* ensures button is centered with text */
-  margin-top: 1rem;
-}
-
-/* === Tuning pass 6 — wrap text around icons in "How the appraisal process works" === */
-.steps .step {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-}
-
-.steps .step .icon {
-  flex-shrink: 0;
-  font-size: 1.8rem;  /* slightly bigger for visibility */
+.footer-cta-btn {
+  background: linear-gradient(45deg, #ffce00, #ff9a00);
+  color: #fff;
+  padding: .6rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.3);
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
   line-height: 1;
-  margin-bottom: 0;   /* remove old vertical gap */
 }
+.footer-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 14px rgba(0,0,0,.3); }
 
-.steps .step h3,
-.steps .step p {
-  margin: 0; /* tightens up heading and text spacing */
+.footer-bottom {
+  box-shadow: 0 4px 12px rgba(0,0,0,.2);
+  background-image: linear-gradient(to right, #3b5f41, #324c37);
+  display: flex; flex-wrap: wrap; justify-content: space-between;
+  padding: 2rem 1rem; gap: 1.5rem;
+  color: #ccc; /* ensure light text */
 }
+.footer-bottom a { color: inherit; text-decoration: underline; }
+.footer-bottom img { width: 200px; height: auto; margin-bottom: .2rem; }
+.footer-column h4 { margin-bottom: .5rem; }
+.footer-bottom-bar { background: #2c2c2c; color: #ccc; text-align: center; padding: .5rem; }
 
-/* === Fix step cards: widen columns and use true wrap around icons === */
-.steps {
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* was 220px */
-}
-
-/* Reset from flex to block so float wrapping works */
-.steps .step {
-  display: block;
-  padding: 1.25rem 1rem;
-}
-
-/* Float the icon so heading + paragraph wrap beside it */
-.steps .step .icon {
-  float: left;
-  font-size: 1.8rem;
-  line-height: 1;
-  margin: .15rem .75rem .25rem 0; /* right gap from text */
-}
-
-/* Clear the float at the end of each card */
-.steps .step::after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
-/* Tighter, balanced typography inside cards */
-.steps .step h3 {
-  font-size: clamp(1.1rem, 2.1vw, 1.3rem); /* a notch smaller */
-  line-height: 1.25;
-  margin: 0 0 .25rem;
-}
-.steps .step p {
-  margin: 0;
-  line-height: 1.5;
-  /* optional: keep paragraphs from getting super narrow on tall screens */
-  max-width: 52ch;
-}
-
-/* Audience Card Alignment & Styling */
-.audience-card {
-  min-height: 320px; /* Keeps both cards the same height */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding: 1.5rem;
-}
-
-.audience-card h3 {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-.audience-card ul {
-  padding-left: 1.2rem;
-  margin: 0;
-  flex-grow: 1; /* Makes bullet section stretch evenly */
-}
-
-.audience-card li {
-  margin-bottom: 0.5rem;
-  font-size: 0.95rem; /* Slightly smaller bullet text */
-  line-height: 1.4;
-}
-
-/* Ensure both boxes align in a grid */
-.audience-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1rem;
-  align-items: stretch; /* Stretches cards to match height */
-}
-
-/* ===== Evidence Stack (photo + note card) ===== */
-.evidence-stack {
-  position: relative;
-  max-width: 980px;
-  margin: 1.5rem auto;
-  /* no background here on purpose */
-}
-
-/* Photo: no backdrop, just a nice shadow */
+/* ======================= */
+/* Evidence Stack Component */
+/* ======================= */
+.evidence-stack { position: relative; margin: 0; } /* used on figure */
 .evidence-photo {
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 10px 28px rgba(0,0,0,0.18);
+  height: 100%;
 }
 .evidence-photo img {
   display: block;
   width: 100%;
-  height: auto;
-  background: transparent; /* ensure no white behind image */
+  height: 100%;
+  object-fit: cover;        /* keep full bleed look */
+  background: transparent;  /* ensure no white behind */
 }
 
-/* Note card: compact “paper” over the photo */
+/* Note card overlay: only element with backdrop */
 .note-card {
   position: absolute;
-  top: 14px;           /* adjust to taste */
+  top: 14px;
   left: 14px;
   background: rgba(255,255,255,0.92);
   backdrop-filter: saturate(120%) blur(6px);
   -webkit-backdrop-filter: saturate(120%) blur(6px);
   color: #1c1c1c;
-  padding: .55rem .85rem;         /* tighter = shorter card */
+  padding: .55rem .85rem;     /* compact height */
   border-radius: 12px;
   border: 1px solid rgba(0,0,0,0.06);
   box-shadow: 0 8px 22px rgba(0,0,0,0.12);
   max-width: min(78%, 520px);
-  line-height: 1.25;              /* tighter rows */
+  line-height: 1.25;
 }
 
-/* Simple table styling inside the note card */
-.note-card table {
-  border-collapse: collapse;
-  width: 100%;
-  font-size: .95rem;              /* slightly smaller text */
-}
-.note-card th,
-.note-card td {
+/* Table in note card */
+.note-card table { border-collapse: collapse; width: 100%; font-size: .95rem; }
+.note-card th, .note-card td {
   padding: .35rem .45rem;
   border-bottom: 1px solid rgba(0,0,0,0.08);
   vertical-align: middle;
 }
-.note-card th {
-  font-weight: 700;
-}
-.note-card tr:last-child th,
-.note-card tr:last-child td {
-  border-bottom: 0;
-}
+.note-card th { font-weight: 700; }
+.note-card tr:last-child th, .note-card tr:last-child td { border-bottom: 0; }
 
-/* Optional: “paperclip” visual spacing if you add an <img> or SVG for it */
-.note-card .clip {
-  position: absolute;
-  top: -10px;
-  left: 8px;
-}
+/* Optional “paperclip” asset if you add one as <img class="clip"> */
+.note-card .clip { position: absolute; top: -10px; left: 8px; }
 
-/* Material spec pill over photo (keep, if you use it) */
+/* On-photo callout pill */
 .material-spec {
   position: absolute;
   left: 28px;
   bottom: 24px;
-  background: rgba(33, 45, 40, 0.8); /* dark green-ish */
+  background: rgba(33,45,40,0.85);
   color: #fff;
   padding: .45rem .7rem;
   border-radius: 8px;
@@ -385,25 +280,16 @@ footer{margin-top:1.5rem;font-size:.95rem}
   box-shadow: 0 6px 18px rgba(0,0,0,0.18);
 }
 
-/* Verified stamp (optional) */
-.verified-stamp {
-  position: absolute;
-  right: 18px;
-  bottom: 14px;
-  opacity: .9;
-}
+/* Optional verified stamp image if used */
+.verified-stamp { position: absolute; right: 18px; bottom: 14px; opacity: .9; }
 
-/* Mobile tweaks */
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .steps, .audience-grid, .feature-grid { gap: 1.35rem; }
+}
 @media (max-width: 560px) {
-  .note-card {
-    top: 10px;
-    left: 10px;
-    max-width: 86%;
-    padding: .5rem .7rem;
-    line-height: 1.2;
-  }
+  .hero { padding-top: 2.5rem; }
+  .note-card { top: 10px; left: 10px; max-width: 86%; padding: .5rem .7rem; line-height: 1.2; }
   .note-card table { font-size: .9rem; }
   .material-spec { left: 16px; bottom: 16px; }
 }
-
-
